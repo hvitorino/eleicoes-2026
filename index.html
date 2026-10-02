@@ -38,7 +38,7 @@
   .section.active{display:block}
   @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:18px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
   .card h2{font-size:1.25rem;margin-bottom:12px;display:flex;align-items:center;gap:8px}
   .card h3{font-size:1.02rem;margin:14px 0 8px;color:var(--gold)}
@@ -93,7 +93,35 @@
   .footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:.85rem}
   .top-link{float:right;background:var(--card);border:1px solid var(--line);color:var(--muted);padding:6px 12px;border-radius:8px;font-size:.8rem}
 
-  @media(max-width:640px){ .avatar{width:72px;height:72px} nav.tabs button{font-size:.8rem;padding:7px 10px} }
+  @media(max-width:640px){
+    .wrap{padding:0 12px}
+    .hero{padding:22px 0 14px}
+    .hero p.sub{font-size:.9rem}
+    .card{padding:16px}
+    .card h2{font-size:1.1rem}
+    .grid{grid-template-columns:1fr;gap:14px}
+    .avatar{width:64px;height:64px}
+    .candidate-head{gap:10px}
+    .candidate-head .meta h2{font-size:1.25rem}
+    .candidate-head .meta .part{font-size:.88rem}
+    nav.tabs .wrap{padding:8px 12px;gap:2px}
+    nav.tabs button{font-size:.78rem;padding:7px 9px;white-space:nowrap}
+    .filters select,.filters input{width:100%;min-width:0}
+    .card > table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+    th,td{padding:7px 8px;font-size:.82rem}
+    details.acc summary{font-size:.9rem;padding:11px 12px}
+    details.acc .inner{padding:2px 12px 12px}
+    .pill{margin-bottom:4px}
+    .hl{padding:10px 12px;font-size:.86rem}
+    /* Tabela de projetos vira cartões no celular */
+    #pl-table-wrap table,#pl-table-wrap thead,#pl-table-wrap tbody,#pl-table-wrap tr,#pl-table-wrap td{display:block;width:100%}
+    #pl-table-wrap thead{display:none}
+    #pl-table-wrap tr{border:1px solid var(--line);border-radius:12px;margin:10px 0;padding:10px 12px;background:var(--card2)}
+    #pl-table-wrap td{border:none;padding:5px 0;display:flex;justify-content:space-between;gap:12px;text-align:right;align-items:baseline}
+    #pl-table-wrap td::before{content:attr(data-label);font-weight:700;color:var(--gold);text-align:left;flex:0 0 auto;font-size:.78rem;text-transform:uppercase;letter-spacing:.3px}
+    #pl-table-wrap td[data-label="Resultado"]{display:block;text-align:center}
+    #pl-table-wrap td[data-label="Resultado"]::before{display:none}
+  }
 </style>
 </head>
 <body>
@@ -576,11 +604,11 @@
     });
     var html = '<table><thead><tr><th>Autor(a)</th><th>Tipo</th><th>Nº/Ano</th><th>Tema</th><th>Ementa</th><th>Situação</th><th>Link</th></tr></thead><tbody>';
     if(rows.length === 0){
-      html += '<tr><td colspan="7" style="text-align:center;color:var(--muted)">Nenhum projeto encontrado com esses filtros.</td></tr>';
+      html += '<tr><td data-label="Resultado" colspan="7" style="text-align:center;color:var(--muted)">Nenhum projeto encontrado com esses filtros.</td></tr>';
     }
     rows.forEach(function(p){
       var nome = p.autor === 'roseno' ? 'Renato Roseno' : 'Gabriel Biologia';
-      html += '<tr><td>'+nome+'</td><td>'+p.tipo+'</td><td>'+p.num+'/'+p.ano+'</td><td><span class="tag '+p.tema+'">'+(TEMAS[p.tema]||p.tema)+'</span></td><td>'+p.titulo+'</td><td>'+p.status+'</td><td><a href="'+p.link+'" target="_blank" rel="noopener">ver ↗</a></td></tr>';
+      html += '<tr><td data-label="Autor(a)">'+nome+'</td><td data-label="Tipo">'+p.tipo+'</td><td data-label="Nº/Ano">'+p.num+'/'+p.ano+'</td><td data-label="Tema"><span class="tag '+p.tema+'">'+(TEMAS[p.tema]||p.tema)+'</span></td><td data-label="Ementa">'+p.titulo+'</td><td data-label="Situação">'+p.status+'</td><td data-label="Link"><a href="'+p.link+'" target="_blank" rel="noopener">ver ↗</a></td></tr>';
     });
     html += '</tbody></table>';
     html += '<p class="muted" style="margin-top:8px">'+rows.length+' de '+PL.length+' itens exibidos (seleção; listas completas nos portais oficiais).</p>';
