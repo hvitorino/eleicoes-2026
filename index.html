@@ -203,10 +203,10 @@
           <li><b>Lei 17.620/2021:</b> proíbe canudos plásticos (com exceções biodegradáveis/reutilizáveis) — coautoria.</li>
           <li><b>Lei 16.974/2019:</b> Política Estadual de Controle de Armas de Fogo — marcação e rastreabilidade de munições.</li>
           <li><b>Lei 17.165/2020:</b> reconhece a existência, a contribuição e os direitos dos povos indígenas no Ceará.</li>
-          <li><b>Lei 16.832/2018:</b> proíbe homenagens a pessoas que praticaram violações de direitos humanos (período da ditadura).</li>
+          <li><b>Lei 16.832/2019:</b> dispõe sobre orientações de memória histórica — veda homenagens a pessoas que praticaram violações de direitos humanos (período da ditadura).</li>
           <li><b>Lei 16.911/2019:</b> autoriza assinatura eletrônica em projetos de lei de iniciativa popular.</li>
-          <li><b>Leis de saúde mental:</b> 16.938/2019 (Dia Estadual da Luta Antimanicomial), 17.309/2021 (selo “Empresa Amiga da Saúde Mental”), 17.310/2021 (divulgação de cuidados em saúde mental), 17.909/2022 (Outubro Lilás).</li>
-          <li>Outras leis citadas em levantamentos: 15.882/2015 (Dia Estadual contra a Homofobia e Transfobia), 16.027/2016 e 16.493/2018 (proteção a defensores de DH), 16.236/2016 (PPCAAM/CE), 16.682/2018 (Educação em DH), 16.997/2020 (Prevenção e Combate à Tortura), 17.006/2020 (Sinal Vermelho), 17.274/2020 (População em Situação de Rua), 17.416/2021 (Política LGBT), 17.568/2021 (Convivência Familiar), 17.771/2022 (Juventude), 18.012/2023 (Igualdade Racial).</li>
+          <li><b>Leis de saúde mental:</b> 16.938/2019 (Dia Estadual da Luta Antimanicomial), 17.309/2020 (selo “Empresa Amiga da Saúde Mental”), 17.310 (divulgação de cuidados em saúde mental) e 17.909/2022 (Outubro Lilás).</li>
+          <li>Outras pautas citadas em levantamentos de imprensa, cujos números de lei <b>não foram confirmados</b> nas bases oficiais consultadas: proteção a defensores de direitos humanos, PPCAAM/CE, educação em direitos humanos, prevenção e combate à tortura, Sinal Vermelho, população em situação de rua, política LGBT, convivência familiar e comunitária, juventude e igualdade racial.</li>
         </ul>
         <p class="muted">Para a lista completa e atualizada, filtrar por autor “Renato Roseno” no sistema da ALECE (ver aba Links).</p>
       </div>
@@ -367,7 +367,7 @@
 <section id="s-projetos" class="section">
   <div class="card">
     <h2>📋 Explorador de Projetos de Lei</h2>
-    <p class="muted">Tabela interativa com projetos/leis selecionados dos dois candidatos. Use os filtros e clique nos links para ver o texto oficial. A lista completa de Gabriel está no SAPL (275 matérias); a de Roseno, no sistema da ALECE (≈38 leis até 2022 + novas).</p>
+    <p class="muted">Tabela interativa com projetos/leis selecionados dos dois candidatos, com <b>links diretos</b> para o texto oficial (SAPL e ALECE). Use os filtros e clique em “ver ↗”. A lista completa de Gabriel está no SAPL (275 matérias); a de Roseno, no sistema da ALECE.</p>
     <div class="filters">
       <select id="f-autor">
         <option value="todos">Todos os autores</option>
@@ -528,21 +528,16 @@
 
   // ===== Base de projetos =====
   var PL = [
-    // Roseno (leis estaduais)
-    {autor:'roseno', tipo:'Lei Estadual', num:'16.820', ano:2019, tema:'meio', titulo:'Lei Zé Maria do Tomé — proíbe pulverização aérea de agrotóxicos no Ceará', status:'Sancionada', link:'https://belt.al.ce.gov.br/'},
-    {autor:'roseno', tipo:'Lei Estadual', num:'17.620', ano:2021, tema:'meio', titulo:'Proíbe canudos plásticos em estabelecimentos do Ceará (coautoria)', status:'Sancionada', link:'https://www2.al.ce.gov.br/legislativo/lei_ordinaria.htm'},
-    {autor:'roseno', tipo:'Lei Estadual', num:'16.974', ano:2019, tema:'seg', titulo:'Política Estadual de Controle de Armas de Fogo — marcação e rastreabilidade de munições', status:'Sancionada', link:'https://belt.al.ce.gov.br/'},
-    {autor:'roseno', tipo:'Lei Estadual', num:'17.165', ano:2020, tema:'dh', titulo:'Reconhece existência, contribuição e direitos dos povos indígenas no Ceará', status:'Sancionada', link:'https://belt.al.ce.gov.br/'},
-    {autor:'roseno', tipo:'Lei Estadual', num:'16.832', ano:2018, tema:'dh', titulo:'Proíbe homenagens a violadores de direitos humanos (período da ditadura)', status:'Sancionada', link:'https://belt.al.ce.gov.br/'},
-    {autor:'roseno', tipo:'Lei Estadual', num:'16.911', ano:2019, tema:'dh', titulo:'Autoriza assinatura eletrônica em projetos de lei de iniciativa popular', status:'Sancionada', link:'https://belt.al.ce.gov.br/'},
-    {autor:'roseno', tipo:'Lei Estadual', num:'16.938', ano:2019, tema:'saude', titulo:'Dia Estadual da Luta Antimanicomial (18 de maio)', status:'Sancionada', link:'https://belt.al.ce.gov.br/'},
-    {autor:'roseno', tipo:'Lei Estadual', num:'17.309', ano:2021, tema:'saude', titulo:'Selo “Empresa Amiga da Saúde Mental”', status:'Sancionada', link:'https://belt.al.ce.gov.br/'},
-    {autor:'roseno', tipo:'Lei Estadual', num:'17.909', ano:2022, tema:'saude', titulo:'Campanha “Outubro Lilás” — saúde mental de profissionais da Educação', status:'Sancionada', link:'https://belt.al.ce.gov.br/'},
-    {autor:'roseno', tipo:'Lei Estadual', num:'16.997', ano:2020, tema:'dh', titulo:'Política Estadual de Prevenção e Combate à Tortura', status:'Sancionada', link:'https://belt.al.ce.gov.br/'},
-    {autor:'roseno', tipo:'Lei Estadual', num:'17.274', ano:2020, tema:'dh', titulo:'Política Estadual para a População em Situação de Rua', status:'Sancionada', link:'https://belt.al.ce.gov.br/'},
-    {autor:'roseno', tipo:'Lei Estadual', num:'17.416', ano:2021, tema:'dh', titulo:'Política Estadual de Promoção e Defesa dos Direitos LGBT', status:'Sancionada', link:'https://belt.al.ce.gov.br/'},
-    {autor:'roseno', tipo:'Lei Estadual', num:'18.012', ano:2023, tema:'dh', titulo:'Política Estadual de Promoção da Igualdade Racial', status:'Sancionada', link:'https://belt.al.ce.gov.br/'},
-    {autor:'roseno', tipo:'Lei Estadual', num:'17.771', ano:2022, tema:'edu', titulo:'Política Estadual de Juventude', status:'Sancionada', link:'https://belt.al.ce.gov.br/'},
+    // Roseno (leis estaduais com link direto verificado)
+    {autor:'roseno', tipo:'Lei Estadual', num:'16.820', ano:2019, tema:'meio', titulo:'Lei Zé Maria do Tomé — proíbe pulverização aérea de agrotóxicos no Ceará', status:'Sancionada', link:'https://www2.al.ce.gov.br/legislativo/legislacao5/leis2018/16820.htm'},
+    {autor:'roseno', tipo:'Lei Estadual', num:'17.620', ano:2021, tema:'meio', titulo:'Proíbe canudos plásticos em estabelecimentos do Ceará (coautoria)', status:'Sancionada', link:'https://www2.al.ce.gov.br/legislativo/legislacao5/leis2021/17620.htm'},
+    {autor:'roseno', tipo:'Lei Estadual', num:'16.974', ano:2019, tema:'seg', titulo:'Política Estadual de Controle de Armas de Fogo — marcação e rastreabilidade de munições', status:'Sancionada', link:'https://www2.al.ce.gov.br/legislativo/legislacao5/leis2019/16974.htm'},
+    {autor:'roseno', tipo:'Lei Estadual', num:'17.165', ano:2020, tema:'dh', titulo:'Reconhece existência, contribuição e direitos dos povos indígenas no Ceará', status:'Sancionada', link:'https://www2.al.ce.gov.br/legislativo/legislacao5/leis2020/17165.htm'},
+    {autor:'roseno', tipo:'Lei Estadual', num:'16.832', ano:2019, tema:'dh', titulo:'Dispõe sobre orientações de memória histórica (veda homenagens a violadores de direitos humanos)', status:'Sancionada', link:'https://www2.al.ce.gov.br/legislativo/legislacao5/leis2018/16832.htm'},
+    {autor:'roseno', tipo:'Lei Estadual', num:'16.911', ano:2019, tema:'dh', titulo:'Autoriza assinatura eletrônica em projetos de lei de iniciativa popular', status:'Sancionada', link:'https://www2.al.ce.gov.br/legislativo/legislacao5/leis2019/16911.htm'},
+    {autor:'roseno', tipo:'Lei Estadual', num:'16.938', ano:2019, tema:'saude', titulo:'Dia Estadual da Luta Antimanicomial (18 de maio)', status:'Sancionada', link:'https://www2.al.ce.gov.br/legislativo/legislacao5/leis2019/16938.htm'},
+    {autor:'roseno', tipo:'Lei Estadual', num:'17.309', ano:2020, tema:'saude', titulo:'Selo “Empresa Amiga da Saúde Mental”', status:'Sancionada', link:'https://www2.al.ce.gov.br/legislativo/legislacao5/leis2020/17309.htm'},
+    {autor:'roseno', tipo:'Lei Estadual', num:'17.909', ano:2022, tema:'saude', titulo:'Campanha “Outubro Lilás” — saúde mental de profissionais da Educação', status:'Sancionada', link:'https://www2.al.ce.gov.br/legislativo/legislacao5/leis2022/17909.htm'},
     // Gabriel (municipais - Fortaleza)
     {autor:'gabriel', tipo:'Lei Municipal', num:'11.484', ano:2024, tema:'meio', titulo:'Dia Municipal de Combate aos Maus-Tratos de Animais Silvestres', status:'Sancionada', link:'https://sapl.fortaleza.ce.leg.br/norma/14001'},
     {autor:'gabriel', tipo:'Lei Municipal', num:'11.485', ano:2024, tema:'outro', titulo:'Utilidade pública — Associação Madre Verônica (AMAVE)', status:'Sancionada', link:'https://sapl.fortaleza.ce.leg.br/norma/13998'},
